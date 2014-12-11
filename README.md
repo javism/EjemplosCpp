@@ -9,10 +9,11 @@
 [Implementación clases
 ](https://github.com/javism/EjemplosCpp/tree/master/src/ClassesAbstractas "")
 
-
 Este ejemplo demuestra cómo utilizar clases abstractas en C++. El objetivo del ejemplo es mostrar cómo una clase madre abstracta define una interfaz de programación común para las clases o programas que la utilicen.
 
 En este ejemplo la clase madre Poligono define la funcion area(), y obliga a las clases hijas a implementar esta función. En el ejemplo las clases Cuadrado y Rectángulo son clases hijas que implementan la función area().
+
+![Diagrama de clases del ejemplo](doc/inherit_graph_0.png "Diagrama de clases del ejemplo")
 
 El código del programa principal tiene una función que recibe un objeto de la clase madre (Polígono), y llama a la función area().
 
