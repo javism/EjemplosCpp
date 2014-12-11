@@ -9,10 +9,9 @@
 #include <cstddef>
 namespace ejemplos {
 
-UsadoraPoligono::UsadoraPoligono() {
+UsadoraPoligono::UsadoraPoligono(Poligono* p) {
 	// TODO Auto-generated constructor stub
-	_poligono = NULL; // En C++11 nullptr;
-
+	_poligono = p;
 }
 
 UsadoraPoligono::~UsadoraPoligono() {
@@ -20,14 +19,18 @@ UsadoraPoligono::~UsadoraPoligono() {
 }
 
 void UsadoraPoligono::set_poligono(Poligono* p) {
-	_poligono = p;
+	if (p != NULL) // En C++11 nullptr;
+		_poligono = p;
 }
 
 float UsadoraPoligono::calcula_area() {
 	/* Llamamos a la función area() del Poligono, UsadoraPoligono no conoce
 	 * el objeto que recibe, pero sabe que tiene un método que se llama area()
 	 */
-	return _poligono->area();
+	if (_poligono != NULL) // En C++11 nullptr;
+		return _poligono->area();
+	else
+		return 0;
 }
 
 } /* namespace ejemplos */

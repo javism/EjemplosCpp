@@ -1,5 +1,5 @@
 /*============================================================================
-Name        : EjemplosCpp.cpp
+Name        : EjemploClasesAbstractas.cpp
 Author      : Javi
 Version     :
 Copyright   : GNU GPLv3
@@ -43,12 +43,16 @@ using namespace ejemplos;
 
 
 void imprime_area(Poligono* pol) {
-	/*
-	 * Se llama al método "area" de la clase "Poligono". Cualquier clase
-	 * hija de "Poligono" tendra el mismo método con los mismos parámetros
-	 * y tipo devuelto, así que será un parámetro válido para la función.
-	 */
-	cout << "El área es " << pol->area() << endl;
+	if (pol != NULL){
+		/*
+		 * Se llama al método "area" de la clase "Poligono". Cualquier clase
+		 * hija de "Poligono" tendra el mismo método con los mismos parámetros
+		 * y tipo devuelto, así que será un parámetro válido para la función.
+		 */
+		cout << "El área es " << pol->area() << endl;
+	} else {
+		cout << "Pasa un objeto válido" << endl;
+	}
 }
 
 int main() {
@@ -73,15 +77,16 @@ int main() {
 	cout << "Clase usadora de la interfaz (clase abstracta)";
 	cout << "definida por Poligono" << endl;
 
-	UsadoraPoligono usadora;
-
 	// fijamos el polígono que va a usar la clase y llamamos a
 	// calcular área que internamente llama a area() del objeto Poligono
-	usadora.set_poligono(r);
+	UsadoraPoligono usadora = UsadoraPoligono(r);
 	usadora.calcula_area();
 
 	usadora.set_poligono(c);
 	usadora.calcula_area();
+
+	delete c;
+	delete r;
 
 	return 0;
 }

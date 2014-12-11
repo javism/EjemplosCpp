@@ -17,7 +17,7 @@ private:
 	// Declaramos una variable de tipo puntero a objeto de la clase Poligono
 	Poligono* _poligono;
 public:
-	UsadoraPoligono();
+	UsadoraPoligono(Poligono* p);
 	virtual ~UsadoraPoligono();
 
 	void set_poligono(Poligono* p);
