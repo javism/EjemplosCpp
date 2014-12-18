@@ -18,6 +18,7 @@ private:
 	float _alto;
 public:
 	Rectangulo();
+	Rectangulo(float a, float b);
 	virtual ~Rectangulo();
 
 	/* Las clases que heredan deben redeclarar los métodos virtuales */
@@ -38,6 +39,11 @@ public:
 	void setAncho(float ancho) {
 		this->_ancho = ancho;
 	}
+
+    bool operator < ( const Rectangulo& r )
+    {
+    	return this->_alto < r.getAlto();
+    }
 };
 
 } /* namespace ejemplos */

@@ -7,6 +7,9 @@
 
 #include "UsadoraPoligono.h"
 #include <cstddef>
+#include <typeinfo>
+#include <iostream>
+
 namespace ejemplos {
 
 UsadoraPoligono::UsadoraPoligono(Poligono* p) {
@@ -27,10 +30,12 @@ float UsadoraPoligono::calcula_area() {
 	/* Llamamos a la función area() del Poligono, UsadoraPoligono no conoce
 	 * el objeto que recibe, pero sabe que tiene un método que se llama area()
 	 */
-	if (_poligono != NULL) // En C++11 nullptr;
+	if (_poligono != NULL) { // En C++11 nullptr;
+		std::cout << typeid(_poligono).name() << std::endl;
 		return _poligono->area();
-	else
+	} else {
 		return 0;
+	}
 }
 
 } /* namespace ejemplos */
