@@ -55,20 +55,19 @@ int main() {
 		cout << "Rectangulo: " << it->getAncho() << "," << it->getAlto() << endl;
 	}
 
-	/* Otra opción sería ordenar la vista usando una función lambda, esta vez ordenamos por alto
-	 * TODO: Este ejemplo aún no funciona*/
+	/* Otra opción, sólo en C++11 sería ordenar la vista usando una función lambda, 
+	 * esta vez ordenamos por alto en orden descendente */
 
-	/*
 	lista3.push_back(r1);
 	lista3.push_back(r2);
 	lista3.push_back(r3);
 
 	lista3.sort( [](const Rectangulo &x, const Rectangulo &y) { return x.getAlto() > y.getAlto(); } );
-	cout << "Lista ordenada usando una función lambda" << endl;
+	cout << "Lista ordenada usando una función lambda que ordena por alto descendente" << endl;
 
 	for (it=lista3.begin(); it != lista3.end(); it++) {
 		cout << "Rectangulo: " << it->getAncho() << "," << it->getAlto() << endl;
-	}*/
+	}
 
 
 
